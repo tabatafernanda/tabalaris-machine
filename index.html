@@ -43,7 +43,7 @@
 
 
     </div>
-    </div>
+    </div>3
 
     <script>
 
@@ -100,6 +100,35 @@
             input_nOctal.value = decimal.toString(8)
             input_nHexa.value = decimal.toString(16)
         }
+
+        function validarHexa() {
+            input_nHexa.addEventListener('input', function () {
+                const input = input_nHexa.value.replace(/[^0-9a-fA-F]/g, '') // replace em tudo que não for de 0 a 9 (da pra fazer isso com letras tambem)
+                input_nHexa.value = input
+            })
+        }
+        function converterHexa() {
+            let binario = Number(input_nBinario.value)
+            let decimal = Number(input_nDecimal.value)
+            let hexa = input_nHexa.value
+            let octal = Number(input_nOctal.value)}
+
+            function validarOctal(){
+                input_nOctal.addEventListener('input', function () {
+                const input = input_nOctal.value.replace(/[^0-7]/g, '') // replace em tudo que não for de 0 a 9 (da pra fazer isso com letras tambem)
+                input_nOctal.value = input
+            })
+
+            function converterOctal() {
+            let binario = Number(input_nBinario.value)
+            let decimal = Number(input_nDecimal.value)
+            let hexa = input_nHexa.value
+            let octal = Number(input_nOctal.value)}
+
+
+
+            }
+
 
     </script>
 </body>
