@@ -1,0 +1,57 @@
+.container {
+    width: 20%;
+    height: 60vh;
+    display: flex;
+    box-shadow: 5px 5px 31px rgba(0, 0, 0, 0.329);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #507c5a;
+    margin-left: 67%; 
+    margin-top: 4%;/* Adiciona um espaçamento à esquerda para mover o container para a direita */
+}
+
+
+.conversor {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+}
+
+h1 {
+    text-align:right;
+    padding-right: 150px; 
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+}
+
+h2 {
+    text-align:right;
+    padding-right: 50px; 
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+img {
+    width: 60%;
+    height: 100vh;
+    align-items: center;
+    margin-left: 20%;
+}
+
+.div-imagem {
+    width: 50%; /* Define a largura para ocupar metade da tela */
+    height: 100vh; /* Define a altura para ocupar toda a altura da tela */
+    background-color: #507c5a; /* Define a cor de fundo */
+    position: fixed; /* Fixa o elemento à tela */
+    top: 0; /* Posiciona o elemento no topo da tela */
+    left: 0; /* Posiciona o elemento no lado esquerdo da tela */
+    z-index: -1; /* Garante que o elemento esteja atrás de outros conteúdos */
+    box-shadow: 2 1 15px rgb(0, 0, 0);
+
+}
