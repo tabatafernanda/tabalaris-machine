@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tabalary's Machine</title>
+</head>
+
+<body>
+
+    <div class="conversor">
+        <h1>Tabalary's Machine</h1>
+
+        <br><br>
+        <!-- a propriedade onkeypress() chama a função toda vez que uma tecla é pressionada no input (sem ser solta ainda)
+
+        Já o onkeyup chama a função assim que a tecla é solta, após ela ser pressionada. -->
+        <input type="number" onkeypress="validarBinario()" onkeyup="converterBinario()" id="input_nBinario">
+        <br>
+        <input type="number" onkeypress="validarDecimal()" onkeyup="converterDecimal()" id="input_nDecimal">
+        <br>
+        <input type="text" onkeypress="validarHexa()" onkeyup="converterHexa()" id="input_nHexa" style="text-transform: uppercase;">
+        <br>
+        <input type="number" onkeypress="validarOctal()" onkeyup="converterOctal()" id="input_nOctal">
+
+    </div>
+
+    <script>
+        
+        function validarBinario() {
+            // aqui estamos pegando o id do input para numeros binarios (input_nBinario) e adicionando um "ouvinte de
+            // evento" para qualquer alteração feita nesse elemento input, ou seja, qualquer evento que aconteça nele.
+            // sempre que acontecer uma alteração, é executada a função criada em seguida:
+
+            input_nBinario.addEventListener('input', function () {
+                
+                // na função é criada a constante input, que pega o valor digitado no input e substitui qualquer valor que
+                // não seja 0 ou 1, colocando um "vazio" em seu lugar. Assim fazemos a validação do que é digitado
+                // pelo usuario. O /g quer dizer que essa substituição vai ser global, ou seja, em todo conteudo do input
+                const input = input_nBinario.value.replace(/[^01]/g, '')
+                input_nBinario.value = input // add no input_nBinario o conteudo da const input que já vai estar somente com valores 0 e 1 
+            })
+        }
+
+        function validarDecimal() {
+            input_nDecimal.addEventListener('input', function() {
+                const input = input_nDecimal.value.replace(/[^0-9]/g, '') // replace em tudo que não for de 0 a 9 (da pra fazer isso com letras tambem)
+                input_nDecimal.value = input
+            })
+        }
+
+        // falta as funcoes pra validar hexadecimal e octal
+        
+
+        // funcoes para conversão das bases
+        function converterBinario() {
+            let binario = Number(input_nBinario.value)
+            let decimal = Number(input_nDecimal.value)
+            let hexa = input_nHexa.value
+            let octal = Number(input_nOctal.value)
+
+            // primeiro precisa converter o valor em binario para decimal, para poder converter para as outras bases usando o metodo toString()
+            let convertidoDecimal = parseInt(binario, 2)
+            
+            // agora, só adicionar ao value (conteudo) do input os valores convertidos em cada base
+            input_nDecimal.value = convertidoDecimal
+            input_nOctal.value = convertidoDecimal.toString(8)
+            input_nHexa.value = convertidoDecimal.toString(16)
+        }
+
+        function converterDecimal() {
+            let binario = Number(input_nBinario.value)
+            let decimal = Number(input_nDecimal.value)
+            let hexa = input_nHexa.value
+            let octal = Number(input_nOctal.value)
+        
+            // como o metodo toString() usa o numero decimal, não é preciso fazer o que foi feito na função de cima
+            // basta converter diretamente o seu valor para as bases 
+            input_nBinario.value = decimal.toString(2)
+            input_nOctal.value = decimal.toString(8)
+            input_nHexa.value = decimal.toString(16)
+        }
+
+        </script>
+</body>
+
+</html>
