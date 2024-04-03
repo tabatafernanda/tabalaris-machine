@@ -1,2 +1,2 @@
-# tabalaris-machine
+# tabalarys-machine
 conversor de bases numéricas
