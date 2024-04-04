@@ -17,7 +17,7 @@
 
 
     <h1>Tabalary's Machine</h1>
-    <h2>Calculadora de conversão bases numéricas</h2>
+    <h2>Calculadora de conversão de bases numéricas</h2>
     <div class="div-imagem">
         <div class="image">
             <img src="img/undraw_projections_re_ulc6 (1).svg" alt="">
@@ -27,7 +27,7 @@
         <div class="conversor">
 
         </div>
-        <br><br>
+        
         <!-- a propriedade onkeypress() chama a função toda vez que uma tecla é pressionada no input (sem ser solta ainda)
 
         Já o onkeyup chama a função assim que a tecla é solta, após ela ser pressionada. -->
@@ -43,7 +43,7 @@
 
 
     </div>
-    </div>3
+    </div>
 
     <script>
 
@@ -66,6 +66,20 @@
             input_nDecimal.addEventListener('input', function () {
                 const input = input_nDecimal.value.replace(/[^0-9]/g, '') // replace em tudo que não for de 0 a 9 (da pra fazer isso com letras tambem)
                 input_nDecimal.value = input
+            })
+        }
+
+        function validarOctal() {
+            input_nOctal.addEventListener('input', function () {
+                const input = input_nOctal.value.replace(/[^0-7]/g, '')
+                input_nOctal.value = input
+            })
+        }
+
+        function validarHexa() {
+            input_nHexa.addEventListener('input', function () {
+                const input = input_nHexa.value.replace(/[^0-9a-fA-F]/g, '')
+                input_nHexa.value = input
             })
         }
 
@@ -101,35 +115,35 @@
             input_nHexa.value = decimal.toString(16)
         }
 
-        function validarHexa() {
-            input_nHexa.addEventListener('input', function () {
-                const input = input_nHexa.value.replace(/[^0-9a-fA-F]/g, '') // replace em tudo que não for de 0 a 9 (da pra fazer isso com letras tambem)
-                input_nHexa.value = input
-            })
-        }
         function converterHexa() {
             let binario = Number(input_nBinario.value)
             let decimal = Number(input_nDecimal.value)
             let hexa = input_nHexa.value
-            let octal = Number(input_nOctal.value)}
+            let octal = Number(input_nOctal.value)
 
-            function validarOctal(){
-                input_nOctal.addEventListener('input', function () {
-                const input = input_nOctal.value.replace(/[^0-7]/g, '') // replace em tudo que não for de 0 a 9 (da pra fazer isso com letras tambem)
-                input_nOctal.value = input
-            })
+            // convertendo o numero hexa digitado para decimal
+            let convertidoDecimal = parseInt(hexa, 16)
 
-            function converterOctal() {
+            // convertendo o resultado para as devidas bases
+            input_nBinario.value = convertidoDecimal.toString(2)
+            input_nOctal.value = convertidoDecimal.toString(8)
+            input_nDecimal.value = convertidoDecimal
+        }
+
+        function converterOctal() {
             let binario = Number(input_nBinario.value)
             let decimal = Number(input_nDecimal.value)
             let hexa = input_nHexa.value
-            let octal = Number(input_nOctal.value)}
+            let octal = Number(input_nOctal.value)
 
+            // convertendo o valor octal para decimal com o parseInt()
+            let convertidoDecimal = parseInt(octal, 8)
 
-
-            }
-
-
+            input_nBinario.value = convertidoDecimal.toString(2)
+            input_nDecimal.value = convertidoDecimal
+            input_nHexa.value = convertidoDecimal.toString(16)
+        }
+        
     </script>
 </body>
 

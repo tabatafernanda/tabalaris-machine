@@ -7,34 +7,43 @@
     align-items: center;
     flex-direction: column;
     background-color: #507c5a;
-    margin-left: 67%; 
-    margin-top: 4%;/* Adiciona um espaçamento à esquerda para mover o container para a direita */
+    margin-left: 67%;
+    margin-top: 4%;
+    /* Adiciona um espaçamento à esquerda para mover o container para a direita */
+    color: white;
+    font-size: 18px;
 }
 
+input {
+    height: 8%;
+}
 
 .conversor {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
 h1 {
-    text-align:right;
-    padding-right: 150px; 
+    text-align: right;
+    padding-right: 162px;
     font-family: "Rubik", sans-serif;
     font-optical-sizing: auto;
-    font-weight: <weight>;
+    font-weight: bold;
     font-style: normal;
+    color: #507c5a;
 }
 
 h2 {
-    text-align:right;
-    padding-right: 50px; 
+    text-align: right;
+    padding-right: 55px;
     font-family: "Rubik", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+    font-weight: normal;
+    color: #507c5a;
 }
 
 img {
@@ -45,13 +54,20 @@ img {
 }
 
 .div-imagem {
-    width: 50%; /* Define a largura para ocupar metade da tela */
-    height: 100vh; /* Define a altura para ocupar toda a altura da tela */
-    background-color: #507c5a; /* Define a cor de fundo */
-    position: fixed; /* Fixa o elemento à tela */
-    top: 0; /* Posiciona o elemento no topo da tela */
-    left: 0; /* Posiciona o elemento no lado esquerdo da tela */
-    z-index: -1; /* Garante que o elemento esteja atrás de outros conteúdos */
+    width: 50%;
+    /* Define a largura para ocupar metade da tela */
+    height: 100vh;
+    /* Define a altura para ocupar toda a altura da tela */
+    background-color: #507c5a;
+    /* Define a cor de fundo */
+    position: fixed;
+    /* Fixa o elemento à tela */
+    top: 0;
+    /* Posiciona o elemento no topo da tela */
+    left: 0;
+    /* Posiciona o elemento no lado esquerdo da tela */
+    z-index: -1;
+    /* Garante que o elemento esteja atrás de outros conteúdos */
     box-shadow: 2 1 15px rgb(0, 0, 0);
 
 }
